@@ -6,7 +6,7 @@ const Header = () => {
     const title = useAppSelector(selectPage)
 
     return (
-        <div className={`fixed flex items-center top-0 w-[500px] h-[70px] border-b ${styles.border} bg-white z-50`}>
+        <div className={`fixed flex items-center top-0 ${styles.contentWidth} h-[70px] border-b ${styles.border} bg-white z-50`}>
             <p className={`${styles.primaryText} font-black pl-3`}>{title}</p>
         </div>
     )

@@ -1,6 +1,7 @@
 import {useEffect} from "react";
 import {setPage} from "../slices/pageSlice";
 import {useAppDispatch} from "../store/hooks";
+import {styles} from "../styles";
 
 const Search = () => {
     const dispatch = useAppDispatch()
@@ -10,7 +11,7 @@ const Search = () => {
     })
 
     return (
-        <main className={`absolute top-[70px] max-w-[500px]`}>
+        <main className={`absolute top-[70px] ${styles.contentWidth}`}>
             Search
         </main>
     )

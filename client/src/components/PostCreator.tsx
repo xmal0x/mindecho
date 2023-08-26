@@ -43,7 +43,7 @@ const PostCreator = () => {
     }
 
     return (
-        <div className={`fixed top-[70px] p-3 w-[500px] h-[150px] border-b ${styles.border} bg-white z-50`}>
+        <div className={`fixed top-[70px] p-3 ${styles.contentWidth} h-[150px] border-b ${styles.border} bg-white z-50`}>
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col h-full justify-between"

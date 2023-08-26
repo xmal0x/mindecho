@@ -2,10 +2,11 @@ import express from 'express';
 import cors from 'cors'
 import postsRouter from './routes/posts'
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const app = express();
-
-const CONNECTION_URL = 'mongodb+srv://malo2dis:malo2dis123@cluster0.krtatpu.mongodb.net/?retryWrites=true&w=majority'
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -20,7 +21,11 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(CONNECTION_URL)
+if (!process.env.CONNECTION_URL) {
+    throw new Error('Connection string is empty')
+}
+
+mongoose.connect(process.env.CONNECTION_URL)
     .then(() => app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     }))

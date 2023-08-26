@@ -1,6 +1,7 @@
 import {useAppDispatch} from "../store/hooks";
 import {useEffect} from "react";
 import {setPage} from "../slices/pageSlice";
+import {styles} from "../styles";
 
 const About = () => {
     const dispatch = useAppDispatch()
@@ -10,7 +11,7 @@ const About = () => {
     })
 
     return (
-        <main className={`absolute top-[70px] max-w-[500px] flex flex-col gap-3 p-3`}>
+        <main className={`absolute top-[70px] ${styles.contentWidth} flex flex-col gap-3 p-3`}>
             <p>Welcome to our platform! We are excited to introduce you to our simple yet powerful diary application.
                 Designed with a user-friendly interface reminiscent
                 of Twitter, our diary platform offers you the ability to express and share your thoughts effortlessly.
